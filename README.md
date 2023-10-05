@@ -45,7 +45,9 @@ void decrement_Count()
  {
         count = count - 1;
         printf("Item removed. Current count: %d\n", count);
-    } else {
+    }
+else
+{
         printf("No items to remove. Current count is zero.\n");
     }
 }
@@ -60,7 +62,8 @@ int main()
     bool running = 1;
     int choice;
 
-    while (running) {
+    while (running)
+ {
         printf("\nProduction Line Counter System\n");
         printf("1. Produce an item\n");
         printf("2. Remove an item\n");
@@ -69,7 +72,8 @@ int main()
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
-        switch (choice) {
+        switch (choice)
+{
             case 1:
                 incrementCount();
                 break;
@@ -92,6 +96,9 @@ int main()
     return 0;
 }
 ```
+
+![Screenshot from 2023-10-05 23-16-45](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/f211635c-a9c4-47ac-9d27-cb411ee5506a)
+
 
 
 
