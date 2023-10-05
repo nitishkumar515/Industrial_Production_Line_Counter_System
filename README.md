@@ -27,4 +27,71 @@ Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of th
 
 ![block_digram](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/21075e96-9d4b-4a9c-95f3-e8c2ea4c1e34)
 
+## C Code
+```
+#include <stdio.h>
+
+int count = 0;
+
+void increment_Count()
+{
+ count =count + 1;
+  printf("Item produced. Current count: %d\n", count);
+ }
+
+void decrement_Count()
+ {
+    if (count > 0)
+ {
+        count = count - 1;
+        printf("Item removed. Current count: %d\n", count);
+    } else {
+        printf("No items to remove. Current count is zero.\n");
+    }
+}
+
+void displayCount()
+{
+    printf("Current count: %d\n", count);
+}
+
+int main()
+ {
+    bool running = 1;
+    int choice;
+
+    while (running) {
+        printf("\nProduction Line Counter System\n");
+        printf("1. Produce an item\n");
+        printf("2. Remove an item\n");
+        printf("3. Display current count\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                incrementCount();
+                break;
+            case 2:
+                decrementCount();
+                break;
+            case 3:
+                displayCount();
+                break;
+            case 4:
+                running = 0;
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+                break;
+        }
+    }
+
+    printf("Exiting the system.\n");
+    return 0;
+}
+```
+
+
 
