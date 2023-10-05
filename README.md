@@ -23,4 +23,6 @@ In this project, I aim to Design and build a Production Line Counter System  usi
 8. Detecting pizza dough.
 ## Requirements
 
-Here I am using *Z3R-400* sensor. The small beam of the Z3R-400 sensor allows for detecting or counting product flowing through a a process with narrow spaces. 
+Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of the Z3R-400 sensor allows for detecting or counting product flowing through a a process with narrow spaces. The sensor can detect the interruption to a reflected light beam, and decide if an object is present or not.
+
+
