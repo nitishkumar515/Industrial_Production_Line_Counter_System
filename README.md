@@ -104,6 +104,15 @@ int main()
 }
 ```
 
+## Assembly code conversion
+
+Compile the c program using RISCV-V GNU Toolchain and dump the assembly code into water_level_assembly.txt using the below commands.
+```
+riscv32-unkown-elf-gcc -march=rv32i -mabi=ilp32 -ffreestanding -o ./water_level.o water_level.c
+riscv32-unknown-elf-objdump -d  water_level.o > water_level_assembly.txt
+```
+
+
 ![Screenshot from 2023-10-05 23-16-45](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/f211635c-a9c4-47ac-9d27-cb411ee5506a)
 
 
