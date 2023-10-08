@@ -25,6 +25,7 @@ In this project, I aim to Design and build a Production Line Counter System  usi
 
 Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of the Z3R-400 sensor allows for detecting or counting product flowing through a a process with narrow spaces. The sensor can detect the interruption to a reflected light beam, and decide if an object is present or not.
 
+## Block Diagram
 ![block_digram](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/21075e96-9d4b-4a9c-95f3-e8c2ea4c1e34)
 
 ## C Code
