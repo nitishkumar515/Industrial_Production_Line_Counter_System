@@ -34,6 +34,8 @@ Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of th
 ![blo](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/8e505ea4-a3b2-4001-a0fc-fe4a352251a0)
 
 
+
+
 ## C Code
 ```
 #include <stdio.h>
