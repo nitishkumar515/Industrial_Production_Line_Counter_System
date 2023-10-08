@@ -117,4 +117,19 @@ riscv32-unknown-elf-objdump -d  water_level.o > water_level_assembly.txt
 
 
 
+## Word of Thanks
+I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to complete this flow smoothly.
 
+## Acknowledgement
+- Kunal Ghosh, VSD Corp. Pvt. Ltd.
+- Skywater Foundry
+- Mayank Kabra,imtech
+- Bhargav DV,MS
+  
+## Reference 
+
+
+- https://github.com/The-OpenROAD-Project/OpenSTA.git
+- https://github.com/kunalg123
+- https://www.vsdiat.com
+- https://github.com/SakethGajawada/RISCV-GNU
