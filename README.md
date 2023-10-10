@@ -180,6 +180,24 @@ Disassembly of section .text:
    10164:	02010113          	add	sp,sp,32
    10168:	00008067          	ret
 ```
+My assembly code contains instructions like add, lui, sw, and so on.
+Number of different instructions: 13
+List of unique instructions:
+```
+add
+sw
+lui
+lw
+nop
+ret
+li
+beq
+blt
+jal
+j
+bnez
+mv
+```
 
 ## Word of Thanks
 I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to complete this flow smoothly.
