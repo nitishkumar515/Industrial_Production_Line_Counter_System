@@ -38,72 +38,28 @@ Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of th
 
 ## C Code
 ```
-#include <stdio.h>
-
-int count = 0;
-
-void increment_Count()
+#include<stdio.h>
+int sensor_output_pin=0;
+int reset_pin=0;
+int count=0;
+int main ()
 {
- count =count + 1;
-  printf("Item produced. Current count: %d\n", count);
- }
-
-void decrement_Count()
- {
-    if (count > 0)
- {
-        count = count - 1;
-        printf("Item removed. Current count: %d\n", count);
-    }
-else
-{
-        printf("No items to remove. Current count is zero.\n");
-    }
-}
-
-void displayCount()
-{
-    printf("Current count: %d\n", count);
-}
-
-int main()
- {
-    bool running = 1;
-    int choice;
-
-    while (running)
- {
-        printf("\nProduction Line Counter System\n");
-        printf("1. Produce an item\n");
-        printf("2. Remove an item\n");
-        printf("3. Display current count\n");
-        printf("4. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice)
-{
-            case 1:
-                incrementCount();
-                break;
-            case 2:
-                decrementCount();
-                break;
-            case 3:
-                displayCount();
-                break;
-            case 4:
-                running = 0;
-                break;
-            default:
-                printf("Invalid choice. Please try again.\n");
-                break;
+while(1)
+    {
+        if(reset_pin == 1)
+        {
+            count = 0;
         }
+        else if (sensor_output_pin == 1)
+        {
+            count++;
     }
-
-    printf("Exiting the system.\n");
-    return 0;
+   
 }
+return 0;
+}
+
+
 ```
 
 ## Assembly code conversion
@@ -114,89 +70,43 @@ Compile the c program using RISCV-V GNU Toolchain and dump the assembly code int
 /home/nitish/riscv32-toolchain/bin/riscv32-unknown-elf-objdump -d  plcount.o > plcount.txt
 ```
 ```
-
-out_plll.o:     file format elf32-littleriscv
+p_line_count.o:     file format elf32-littleriscv
 
 
 Disassembly of section .text:
 
-00010094 <incrementCount>:
+00010094 <main>:
    10094:	ff010113          	add	sp,sp,-16
    10098:	00812623          	sw	s0,12(sp)
    1009c:	01010413          	add	s0,sp,16
    100a0:	000117b7          	lui	a5,0x11
-   100a4:	16c7a783          	lw	a5,364(a5) # 1116c <__DATA_BEGIN__>
-   100a8:	00178713          	add	a4,a5,1
-   100ac:	000117b7          	lui	a5,0x11
-   100b0:	16e7a623          	sw	a4,364(a5) # 1116c <__DATA_BEGIN__>
-   100b4:	00000013          	nop
-   100b8:	00c12403          	lw	s0,12(sp)
-   100bc:	01010113          	add	sp,sp,16
-   100c0:	00008067          	ret
+   100a4:	0dc7a703          	lw	a4,220(a5) # 110dc <reset_pin>
+   100a8:	00100793          	li	a5,1
+   100ac:	00f71663          	bne	a4,a5,100b8 <main+0x24>
+   100b0:	8001a423          	sw	zero,-2040(gp) # 110e0 <count>
+   100b4:	fedff06f          	j	100a0 <main+0xc>
+   100b8:	000117b7          	lui	a5,0x11
+   100bc:	0d87a703          	lw	a4,216(a5) # 110d8 <__DATA_BEGIN__>
+   100c0:	00100793          	li	a5,1
+   100c4:	fcf71ee3          	bne	a4,a5,100a0 <main+0xc>
+   100c8:	8081a783          	lw	a5,-2040(gp) # 110e0 <count>
+   100cc:	00178713          	add	a4,a5,1
+   100d0:	80e1a423          	sw	a4,-2040(gp) # 110e0 <count>
+   100d4:	fcdff06f          	j	100a0 <main+0xc>
 
-000100c4 <displayCount>:
-   100c4:	ff010113          	add	sp,sp,-16
-   100c8:	00812623          	sw	s0,12(sp)
-   100cc:	01010413          	add	s0,sp,16
-   100d0:	00000013          	nop
-   100d4:	00c12403          	lw	s0,12(sp)
-   100d8:	01010113          	add	sp,sp,16
-   100dc:	00008067          	ret
+```
 
-000100e0 <main>:
-   100e0:	fe010113          	add	sp,sp,-32
-   100e4:	00112e23          	sw	ra,28(sp)
-   100e8:	00812c23          	sw	s0,24(sp)
-   100ec:	02010413          	add	s0,sp,32
-   100f0:	00100793          	li	a5,1
-   100f4:	fef42623          	sw	a5,-20(s0)
-   100f8:	0540006f          	j	1014c <main+0x6c>
-   100fc:	fe842703          	lw	a4,-24(s0)
-   10100:	00300793          	li	a5,3
-   10104:	02f70e63          	beq	a4,a5,10140 <main+0x60>
-   10108:	fe842703          	lw	a4,-24(s0)
-   1010c:	00300793          	li	a5,3
-   10110:	02e7cc63          	blt	a5,a4,10148 <main+0x68>
-   10114:	fe842703          	lw	a4,-24(s0)
-   10118:	00100793          	li	a5,1
-   1011c:	00f70a63          	beq	a4,a5,10130 <main+0x50>
-   10120:	fe842703          	lw	a4,-24(s0)
-   10124:	00200793          	li	a5,2
-   10128:	00f70863          	beq	a4,a5,10138 <main+0x58>
-   1012c:	01c0006f          	j	10148 <main+0x68>
-   10130:	f65ff0ef          	jal	10094 <incrementCount>
-   10134:	0180006f          	j	1014c <main+0x6c>
-   10138:	f8dff0ef          	jal	100c4 <displayCount>
-   1013c:	0100006f          	j	1014c <main+0x6c>
-   10140:	fe042623          	sw	zero,-20(s0)
-   10144:	0080006f          	j	1014c <main+0x6c>
-   10148:	00000013          	nop
-   1014c:	fec42783          	lw	a5,-20(s0)
-   10150:	fa0796e3          	bnez	a5,100fc <main+0x1c>
-   10154:	00000793          	li	a5,0
-   10158:	00078513          	mv	a0,a5
-   1015c:	01c12083          	lw	ra,28(sp)
-   10160:	01812403          	lw	s0,24(sp)
-   10164:	02010113          	add	sp,sp,32
-   10168:	00008067          	ret
+* Number of different instructions: 7
+* List of unique instructions
 ```
-* My assembly code contains instructions like add, lui, sw, and so on.
-* Number of different instructions: 13
-* List of unique instructions:
-```
-add
-sw
+j
 lui
 lw
-nop
-ret
 li
-beq
-blt
-jal
-j
-bnez
-mv
+sw
+add
+bne
+
 ```
 
 ## Word of Thanks
