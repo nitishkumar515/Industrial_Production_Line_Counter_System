@@ -100,6 +100,7 @@ Disassembly of section .text:
    10090:	fef42223          	sw	a5,-28(s0)
    10094:	fd5ff06f          	j	10068 <main+0x14>
 ```
+```
 Number of different instructions: 7
 List of unique instructions:
 ```
