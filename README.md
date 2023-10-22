@@ -73,46 +73,46 @@ return 0;
 
 Compile the c program using RISCV-V GNU Toolchain and dump the assembly code into water_level_assembly.txt using the below commands.
 ```
-/home/nitish/riscv32-toolchain/bin/riscv32-unkown-elf-gcc -march=rv32i -mabi=ilp32 -ffreestanding -o ./plcount.o  plcount.c
-/home/nitish/riscv32-toolchain/bin/riscv32-unknown-elf-objdump -d  plcount.o > plcount.txt
+riscv64-unknown-elf-gcc -march=rv32i -mabi=ilp32 -ffreestanding -nostdlib -o ./out plcount.c
+riscv64-unknown-elf-objdump -d  -r out > pl_count_assembly.txt
+
 ```
 ```
-p_line_count.o:     file format elf32-littleriscv
+out:     file format elf32-littleriscv
 
 
 Disassembly of section .text:
 
-00010094 <main>:
-   10094:	ff010113          	add	sp,sp,-16
-   10098:	00812623          	sw	s0,12(sp)
-   1009c:	01010413          	add	s0,sp,16
-   100a0:	000117b7          	lui	a5,0x11
-   100a4:	0dc7a703          	lw	a4,220(a5) # 110dc <reset_pin>
-   100a8:	00100793          	li	a5,1
-   100ac:	00f71663          	bne	a4,a5,100b8 <main+0x24>
-   100b0:	8001a423          	sw	zero,-2040(gp) # 110e0 <count>
-   100b4:	fedff06f          	j	100a0 <main+0xc>
-   100b8:	000117b7          	lui	a5,0x11
-   100bc:	0d87a703          	lw	a4,216(a5) # 110d8 <__DATA_BEGIN__>
-   100c0:	00100793          	li	a5,1
-   100c4:	fcf71ee3          	bne	a4,a5,100a0 <main+0xc>
-   100c8:	8081a783          	lw	a5,-2040(gp) # 110e0 <count>
-   100cc:	00178713          	add	a4,a5,1
-   100d0:	80e1a423          	sw	a4,-2040(gp) # 110e0 <count>
-   100d4:	fcdff06f          	j	100a0 <main+0xc>
+00010074 <main>:
+   10074:	ff010113          	addi	sp,sp,-16
+   10078:	00812623          	sw	s0,12(sp)
+   1007c:	01010413          	addi	s0,sp,16
+   10080:	000117b7          	lui	a5,0x11
+   10084:	0bc7a703          	lw	a4,188(a5) # 110bc <reset_pin>
+   10088:	00100793          	li	a5,1
+   1008c:	00f71663          	bne	a4,a5,10098 <main+0x24>
+   10090:	8001a423          	sw	zero,-2040(gp) # 110c0 <count>
+   10094:	fedff06f          	j	10080 <main+0xc>
+   10098:	000117b7          	lui	a5,0x11
+   1009c:	0b87a703          	lw	a4,184(a5) # 110b8 <__DATA_BEGIN__>
+   100a0:	00100793          	li	a5,1
+   100a4:	fcf71ee3          	bne	a4,a5,10080 <main+0xc>
+   100a8:	8081a783          	lw	a5,-2040(gp) # 110c0 <count>
+   100ac:	00178713          	addi	a4,a5,1
+   100b0:	80e1a423          	sw	a4,-2040(gp) # 110c0 <count>
+   100b4:	fcdff06f          	j	10080 <main+0xc>
 
 ```
-
-* Number of different instructions: 7
-* List of unique instructions
+Number of different instructions: 7
+List of unique instructions:
 ```
+addi
 j
 lui
-lw
-li
 sw
-add
+li
 bne
+lw
 
 ```
 
