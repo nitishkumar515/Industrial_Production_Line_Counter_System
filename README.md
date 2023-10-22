@@ -38,34 +38,32 @@ Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of th
 
 ## C Code
 ```
-int sensor_output_pin=0;
-int reset_pin=0;
-int count=0;
 int main ()
 {
+    int reset_pin = 0;            // Declared locally
+    int sensor_output_pin = 0;    // Declared locally
+    int output;                   // Declared locally without initialization
 
- 
-while(1)
+    while(1)
     {
         if(reset_pin == 1)
         {
             asm volatile(
             "and %0, x30, 0"
-         );
+            : "=r" (output)    // Assuming you want to store the result in 'output'
+            );
         }
         else if (sensor_output_pin == 1)
         {
-        asm volatile(
-        "add %0, X30, 1"
-        :"r="(output)
-        );
+            asm volatile(
+            "add %0, X30, 1"
+            : "=r" (output)
+            );
+        } 
     }
-   
-}
-return 0;
-}
 
-
+    return 0;
+}
 
 ```
 
