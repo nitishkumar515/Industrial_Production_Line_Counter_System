@@ -49,14 +49,14 @@ int main ()
         if(reset_pin == 1)
         {
             asm volatile(
-            "and %0, x30, 0"
+            "and x30, x30, 0"
             : "=r" (output)    // Assuming you want to store the result in 'output'
             );
         }
         else if (sensor_output_pin == 1)
         {
             asm volatile(
-            "add %0, X30, 1"
+            "add x30, x30, 1"
             : "=r" (output)
             );
         } 
@@ -90,7 +90,7 @@ Disassembly of section .text:
    10068:	fec42703          	lw	a4,-20(s0)
    1006c:	00100793          	li	a5,1
    10070:	00f71863          	bne	a4,a5,10080 <main+0x2c>
-   10074:	000f7793          	andi	a5,t5,0
+   10074:	000f7f13          	andi	t5,t5,0
    10078:	fef42223          	sw	a5,-28(s0)
    1007c:	fedff06f          	j	10068 <main+0x14>
    10080:	fe842703          	lw	a4,-24(s0)
@@ -105,13 +105,13 @@ Number of different instructions: 7
 List of unique instructions:
 ```
 ```
-bne
+j
+addi
+andi
 li
 lw
 sw
-andi
-j
-addi
+bne
 ```
 
 
