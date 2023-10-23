@@ -113,13 +113,14 @@ Number of different instructions: 7
 List of unique instructions:
 ```
 ```
-j
 addi
-andi
-li
-lw
+j
 sw
+li
+andi
 bne
+lw
+
 ```
 
 
