@@ -34,6 +34,14 @@ Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of th
 ![blo](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/8e505ea4-a3b2-4001-a0fc-fe4a352251a0)
 
 
+## testing
+* Design a function that executes the intended logic you require.
+* Compile the code using the GCC compiler and verify the output:
+```
+gcc p_l_count.c
+./a.out
+```
+![Screenshot from 2023-10-23 10-24-12](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/a1970178-dd77-47b1-a780-0e490d54a8cf)
 
 
 ## C Code
