@@ -123,6 +123,36 @@ lw
 
 ```
 
+## Spike Code
+```
+#include<stdio.h>
+#include<stdlib.h>
+int main ()
+{
+    int reset_pin = 0;            // Declared locally
+    int sensor_output_pin = 0;    // Declared locally
+    int output;                   // Declared locally without initialization
+
+    while(1)
+    {
+        if(reset_pin == 1)
+        {
+            output = 0;
+        }
+        else if (sensor_output_pin == 1)
+        {
+            output = output + 1;
+        } 
+    }
+
+    return 0;
+}
+```
+## output
+![Screenshot from 2023-10-25 18-24-14](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/f930162c-c538-4c9c-bf90-838820a20d45)
+
+
+
 
 
 ## Word of Thanks
