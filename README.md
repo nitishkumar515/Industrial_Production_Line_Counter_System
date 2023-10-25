@@ -57,14 +57,14 @@ int main ()
         if(reset_pin == 1)
         {
             asm volatile(
-            "and x30, x30, 0"
+            "and x30, x30, %0"
             : "=r" (output)    // Assuming you want to store the result in 'output'
             );
         }
         else if (sensor_output_pin == 1)
         {
             asm volatile(
-            "add x30, x30, 1"
+            "add x30, x30, %1"
             : "=r" (output)
             );
         } 
