@@ -48,9 +48,9 @@ gcc p_l_count.c
 ```
 int main ()
 {
-    int reset_pin = 0;            // Declared locally
-    int sensor_output_pin = 0;    // Declared locally
-    int output;                   // Declared locally without initialization
+    int reset_pin = 0;            
+    int sensor_output_pin = 0;    
+    int output;                   
 
     while(1)
     {
@@ -58,7 +58,7 @@ int main ()
         {
             asm volatile(
             "and x30, x30, %0"
-            : "=r" (output)    // Assuming you want to store the result in 'output'
+            : "=r" (output)    
             );
         }
         else if (sensor_output_pin == 1)
