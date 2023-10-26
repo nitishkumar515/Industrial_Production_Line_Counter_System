@@ -31,7 +31,7 @@ Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of th
 
 
 ## Block Diagram
-![blo](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/8e505ea4-a3b2-4001-a0fc-fe4a352251a0)
+![Screenshot from 2023-10-26 18-53-01](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/5a46c985-b4ce-496f-9a60-650ed2afe443)
 
 
 ## testing
