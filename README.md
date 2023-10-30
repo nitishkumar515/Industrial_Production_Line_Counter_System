@@ -42,7 +42,15 @@ Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of th
 gcc p_l_count.c
 ./a.out
 ```
-![Screenshot from 2023-10-23 10-24-12](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/a1970178-dd77-47b1-a780-0e490d54a8cf)
+case-1
+reset-pin =0
+sensor-output_pin =1
+
+![Screenshot from 2023-10-30 10-30-38](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7c82585d-e9fd-4745-bfdc-17ebbf23fe28)
+case-2
+reset-pin =1
+sensor-output_pin =0
+![Screenshot from 2023-10-30 10-29-43](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7efc5c86-8565-49e7-addf-cd4fe38d7bb5)
 
 
 ## C Code
