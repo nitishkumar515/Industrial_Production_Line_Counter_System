@@ -43,13 +43,16 @@ gcc p_l_count.c
 ./a.out
 ```
 case-1
+
 reset-pin =0
 sensor-output_pin =1
 
 ![Screenshot from 2023-10-30 10-30-38](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7c82585d-e9fd-4745-bfdc-17ebbf23fe28)
+
 case-2
 reset-pin =1
 sensor-output_pin =0
+
 ![Screenshot from 2023-10-30 10-29-43](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7efc5c86-8565-49e7-addf-cd4fe38d7bb5)
 
 
