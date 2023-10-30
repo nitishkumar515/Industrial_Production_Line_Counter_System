@@ -173,7 +173,9 @@ printf("sum= %d\n",output);
 ### case-1
 reset_pin ==0
 sensor_outpin_pin ==1
-[since , I have given loop max value = 99 so my output is 99, outherwise it can go up max limit of processor]
+
+[since , I have given loop max value = 99 so my output is 99, outherwise it can go up max limit of processor ]
+
 ![Screenshot from 2023-10-30 10-11-36](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/1867f992-4b39-48b3-83b8-3b47c54cdfa4)
 
 ### case-2
