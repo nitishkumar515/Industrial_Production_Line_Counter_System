@@ -60,14 +60,13 @@ sensor-output_pin =0
 ```
  int main ()
 {
-    int reset_pin = 0;            // Declared locally
-    int sensor_output_pin = 1;    // Declared locally
+    int reset_pin;            // Declared locally
+    int sensor_output_pin;    // Declared locally
     int output=0; 
-    int i =0;                  // Declared locally without initialization
-
-    while(i<99)
+                      
+    while(1)
     {
-    i = i +1;
+   
         if(reset_pin == 1)
         {
         int output=0;
@@ -87,7 +86,7 @@ sensor-output_pin =0
             
         }
 
-         printf("sum= %d\n",output);
+         printf("output = %d\n",output);
         
     }
     return 0;
