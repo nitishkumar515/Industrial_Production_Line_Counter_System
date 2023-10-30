@@ -56,7 +56,7 @@ sensor-output_pin =0
 ![Screenshot from 2023-10-30 10-29-43](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7efc5c86-8565-49e7-addf-cd4fe38d7bb5)
 
 
-## C Code
+## In line assembly C code
 ```
  int main ()
 {
