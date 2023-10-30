@@ -70,7 +70,7 @@ sensor-output_pin =0
     i = i +1;
         if(reset_pin == 1)
         {
-        output=0;
+        int output=0;
             asm volatile(
             "and x30, x30, %0"
             : "=r" (output)    // Assuming you want to store the result in 'output'
@@ -85,10 +85,11 @@ sensor-output_pin =0
             );
             
             
-        } 
+        }
+
+         printf("sum= %d\n",output);
         
     }
-printf("sum= %d\n",output);
     return 0;
 }
 
@@ -163,7 +164,7 @@ spike pk out
     i = i +1;
         if(reset_pin == 1)
         {
-        output=0;
+        int output=0;
             asm volatile(
             "and x30, x30, %0"
             : "=r" (output)    // Assuming you want to store the result in 'output'
