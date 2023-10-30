@@ -159,7 +159,7 @@ spike pk out
     int output=0; 
     int i =0;                  // Declared locally without initialization
 
-    while(i<99)
+    while(i<5)
     {
     i = i +1;
         if(reset_pin == 1)
@@ -191,15 +191,16 @@ printf("sum= %d\n",output);
 reset_pin ==0
 sensor_outpin_pin ==1
 
-[since , I have given loop max value = 99 so my output is 99, outherwise it can go up max limit of processor ]
+[since , I have given loop max value = 5 so my output is upto 4, outherwise it can go up max limit of processor ]
 
-![Screenshot from 2023-10-30 10-11-36](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/1867f992-4b39-48b3-83b8-3b47c54cdfa4)
+![Screenshot from 2023-10-30 20-56-18](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/129cc4b5-326c-4c7d-a575-d280ca4b80ef)
 
 ### case-2
 reset-pin ==1
 sensor_output_pin ==0
 
-![Screenshot from 2023-10-30 10-14-59](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/6008e246-8434-4fee-ade1-601a6090442c)
+![Screenshot from 2023-10-30 20-56-46](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/a1ff80fc-aef1-4799-9204-36771cde76be)
+
 
 
 
