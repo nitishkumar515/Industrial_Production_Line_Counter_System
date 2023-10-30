@@ -47,30 +47,37 @@ gcc p_l_count.c
 
 ## C Code
 ```
-int main ()
+ int main ()
 {
-    int reset_pin = 0;            
-    int sensor_output_pin = 0;    
-    int output;                   
+    int reset_pin = 0;            // Declared locally
+    int sensor_output_pin = 1;    // Declared locally
+    int output=0; 
+    int i =0;                  // Declared locally without initialization
 
-    while(1)
+    while(i<99)
     {
+    i = i +1;
         if(reset_pin == 1)
         {
+        output=0;
             asm volatile(
             "and x30, x30, %0"
-            : "=r" (output)    
+            : "=r" (output)    // Assuming you want to store the result in 'output'
             );
         }
         else if (sensor_output_pin == 1)
         {
+        output = output +1;
             asm volatile(
-            "add x30, x30, %1"
-            : "=r" (output)
+            "add x30, x30, %0"
+            : "=r" (output)   // Assuming you want to store the result in 'output'
             );
+            
+            
         } 
+        
     }
-
+printf("sum= %d\n",output);
     return 0;
 }
 
@@ -124,33 +131,57 @@ lw
 
 ```
 
-## Spike Code
+## Spike results
 ```
 #include<stdio.h>
 #include<stdlib.h>
-int main ()
+ int main ()
 {
     int reset_pin = 0;            // Declared locally
-    int sensor_output_pin = 0;    // Declared locally
-    int output;                   // Declared locally without initialization
+    int sensor_output_pin = 1;    // Declared locally
+    int output=0; 
+    int i =0;                  // Declared locally without initialization
 
-    while(1)
+    while(i<99)
     {
+    i = i +1;
         if(reset_pin == 1)
         {
-            output = 0;
+        output=0;
+            asm volatile(
+            "and x30, x30, %0"
+            : "=r" (output)    // Assuming you want to store the result in 'output'
+            );
         }
         else if (sensor_output_pin == 1)
         {
-            output = output + 1;
+        output = output +1;
+            asm volatile(
+            "add x30, x30, %0"
+            : "=r" (output)   // Assuming you want to store the result in 'output'
+            );
+            
+            
         } 
+        
     }
-
+printf("sum= %d\n",output);
     return 0;
 }
 ```
 ## output
-![Screenshot from 2023-10-25 18-24-14](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/f930162c-c538-4c9c-bf90-838820a20d45)
+### case-1
+reset_pin ==0
+sensor_outpin_pin ==1
+![Screenshot from 2023-10-30 10-11-36](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/1867f992-4b39-48b3-83b8-3b47c54cdfa4)
+
+### case-2
+reset-pin ==1
+sensor_output_pin ==0
+
+![Screenshot from 2023-10-30 10-14-59](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/6008e246-8434-4fee-ade1-601a6090442c)
+
+
 
 
 
