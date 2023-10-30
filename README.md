@@ -104,6 +104,7 @@ riscv64-unknown-elf-objdump -d  -r out > pl_count_assembly.txt
 
 ```
 ```
+
 out:     file format elf32-littleriscv
 
 
@@ -114,32 +115,38 @@ Disassembly of section .text:
    10058:	00812e23          	sw	s0,28(sp)
    1005c:	02010413          	addi	s0,sp,32
    10060:	fe042623          	sw	zero,-20(s0)
-   10064:	fe042423          	sw	zero,-24(s0)
-   10068:	fec42703          	lw	a4,-20(s0)
-   1006c:	00100793          	li	a5,1
-   10070:	00f71863          	bne	a4,a5,10080 <main+0x2c>
-   10074:	000f7f13          	andi	t5,t5,0
+   10064:	fe842703          	lw	a4,-24(s0)
+   10068:	00100793          	li	a5,1
+   1006c:	00f71a63          	bne	a4,a5,10080 <main+0x2c>
+   10070:	fe042223          	sw	zero,-28(s0)
+   10074:	00ff7f33          	and	t5,t5,a5
    10078:	fef42223          	sw	a5,-28(s0)
-   1007c:	fedff06f          	j	10068 <main+0x14>
-   10080:	fe842703          	lw	a4,-24(s0)
+   1007c:	fe9ff06f          	j	10064 <main+0x10>
+   10080:	fe042703          	lw	a4,-32(s0)
    10084:	00100793          	li	a5,1
-   10088:	fef710e3          	bne	a4,a5,10068 <main+0x14>
-   1008c:	001f0f13          	addi	t5,t5,1
-   10090:	fef42223          	sw	a5,-28(s0)
-   10094:	fd5ff06f          	j	10068 <main+0x14>
+   10088:	fcf71ee3          	bne	a4,a5,10064 <main+0x10>
+   1008c:	fec42783          	lw	a5,-20(s0)
+   10090:	00178793          	addi	a5,a5,1
+   10094:	fef42623          	sw	a5,-20(s0)
+   10098:	00ff0f33          	add	t5,t5,a5
+   1009c:	fef42623          	sw	a5,-20(s0)
+   100a0:	fc5ff06f          	j	10064 <main+0x10>
 ```
 ```
-Number of different instructions: 7
+Number of different instructions: 8
 List of unique instructions:
 ```
 ```
-addi
-j
-sw
+
+add
 li
-andi
+sw
+addi
+and
 bne
+j
 lw
+
 
 ```
 
