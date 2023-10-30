@@ -136,17 +136,14 @@ Number of different instructions: 8
 List of unique instructions:
 ```
 ```
-
-add
-li
 sw
-addi
-and
-bne
 j
+addi
+bne
+add
+and
+li
 lw
-
-
 ```
 
 ## Spike results
