@@ -113,41 +113,77 @@ out:     file format elf32-littleriscv
 
 Disassembly of section .text:
 
-00010054 <main>:
+00010054 <display>:
    10054:	fe010113          	addi	sp,sp,-32
    10058:	00812e23          	sw	s0,28(sp)
    1005c:	02010413          	addi	s0,sp,32
-   10060:	fe042623          	sw	zero,-20(s0)
-   10064:	fe842703          	lw	a4,-24(s0)
-   10068:	00100793          	li	a5,1
-   1006c:	00f71a63          	bne	a4,a5,10080 <main+0x2c>
-   10070:	fe042223          	sw	zero,-28(s0)
-   10074:	00ff7f33          	and	t5,t5,a5
-   10078:	fef42223          	sw	a5,-28(s0)
-   1007c:	fe9ff06f          	j	10064 <main+0x10>
-   10080:	fe042703          	lw	a4,-32(s0)
-   10084:	00100793          	li	a5,1
-   10088:	fcf71ee3          	bne	a4,a5,10064 <main+0x10>
-   1008c:	fec42783          	lw	a5,-20(s0)
-   10090:	00178793          	addi	a5,a5,1
-   10094:	fef42623          	sw	a5,-20(s0)
-   10098:	00ff0f33          	add	t5,t5,a5
-   1009c:	fef42623          	sw	a5,-20(s0)
-   100a0:	fc5ff06f          	j	10064 <main+0x10>
+   10060:	fea42623          	sw	a0,-20(s0)
+   10064:	00000013          	nop
+   10068:	01c12403          	lw	s0,28(sp)
+   1006c:	02010113          	addi	sp,sp,32
+   10070:	00008067          	ret
+
+00010074 <main>:
+   10074:	fd010113          	addi	sp,sp,-48
+   10078:	02112623          	sw	ra,44(sp)
+   1007c:	02812423          	sw	s0,40(sp)
+   10080:	03010413          	addi	s0,sp,48
+   10084:	fe042623          	sw	zero,-20(s0)
+   10088:	fe042223          	sw	zero,-28(s0)
+   1008c:	00100793          	li	a5,1
+   10090:	fef42023          	sw	a5,-32(s0)
+   10094:	fe042423          	sw	zero,-24(s0)
+   10098:	0540006f          	j	100ec <main+0x78>
+   1009c:	fe442703          	lw	a4,-28(s0)
+   100a0:	00100793          	li	a5,1
+   100a4:	00f71a63          	bne	a4,a5,100b8 <main+0x44>
+   100a8:	fc042e23          	sw	zero,-36(s0)
+   100ac:	00ff7f33          	and	t5,t5,a5
+   100b0:	fcf42e23          	sw	a5,-36(s0)
+   100b4:	0240006f          	j	100d8 <main+0x64>
+   100b8:	fe042703          	lw	a4,-32(s0)
+   100bc:	00100793          	li	a5,1
+   100c0:	00f71c63          	bne	a4,a5,100d8 <main+0x64>
+   100c4:	fec42783          	lw	a5,-20(s0)
+   100c8:	00178793          	addi	a5,a5,1
+   100cc:	fef42623          	sw	a5,-20(s0)
+   100d0:	00ff0f33          	add	t5,t5,a5
+   100d4:	fef42623          	sw	a5,-20(s0)
+   100d8:	fec42503          	lw	a0,-20(s0)
+   100dc:	f79ff0ef          	jal	ra,10054 <display>
+   100e0:	fe842783          	lw	a5,-24(s0)
+   100e4:	00178793          	addi	a5,a5,1
+   100e8:	fef42423          	sw	a5,-24(s0)
+   100ec:	fe842703          	lw	a4,-24(s0)
+   100f0:	00400793          	li	a5,4
+   100f4:	fae7d4e3          	bge	a5,a4,1009c <main+0x28>
+   100f8:	00000793          	li	a5,0
+   100fc:	00078513          	mv	a0,a5
+   10100:	02c12083          	lw	ra,44(sp)
+   10104:	02812403          	lw	s0,40(sp)
+   10108:	03010113          	addi	sp,sp,48
+   1010c:	00008067          	ret
+
 ```
 ```
-Number of different instructions: 8
+Number of different instructions: 13
 List of unique instructions:
 ```
 ```
+mv
+addi
+and
+jal
+lw
 sw
 j
-addi
-bne
+bge
 add
-and
+bne
+nop
 li
-lw
+ret
+
 ```
 
 ## Spike results
@@ -159,6 +195,9 @@ spike pk out
 ```
 #include<stdio.h>
 #include<stdlib.h>
+void display(int number) {
+printf("display count = %d\n",number);
+}
  int main ()
 {
     int reset_pin = 0;            // Declared locally
@@ -190,6 +229,7 @@ spike pk out
         
     }
 printf("sum= %d\n",output);
+display(count);
     return 0;
 }
 ```
