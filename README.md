@@ -44,15 +44,13 @@ gcc p_l_count.c
 ```
 case-1
 
-reset-pin =0
-sensor-output_pin =1
+reset-pin =0    sensor-output_pin =1
 
 ![Screenshot from 2023-11-03 12-30-13](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/189069a6-4087-49c9-8fe9-5f5fa67445eb)
 
 
 case-2
-reset-pin =1
-sensor-output_pin =0
+reset-pin =1   sensor-output_pin =0
 
 ![Screenshot from 2023-11-03 12-29-46](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/f46ed169-6fae-4c92-8d3c-a2fc074e5147)
 
@@ -237,9 +235,7 @@ display(count);
 ```
 ## output
 ### case-1
-reset_pin ==0
-
-sensor_outpin_pin ==1
+reset_pin ==0   sensor_outpin_pin ==1
 
 [since , I have given loop max value = 5 so my output is upto 4, outherwise it can go up max limit of processor ]
 
@@ -247,9 +243,7 @@ sensor_outpin_pin ==1
 
 
 ### case-2
-reset-pin ==1
-
-sensor_output_pin ==0
+reset-pin ==1   sensor_output_pin ==0
 
 ![Screenshot from 2023-11-03 12-34-58](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/25b92f96-c941-4b4e-8544-b4ab768ba0fb)
 
