@@ -237,7 +237,7 @@ display(count);
 ### case-1
 reset_pin ==0   sensor_outpin_pin ==1
 
-[since , I have given loop max value = 5 so my output is upto 4, outherwise it can go up max limit of processor ]
+[since , I have given loop max value = 5 so my output is upto 5, outherwise it can go up max limit of processor ]
 
 ![Screenshot from 2023-11-03 12-34-27](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/25b3e402-8e27-42e9-9d5f-bd6a268b4b4a)
 
