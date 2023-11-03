@@ -47,13 +47,15 @@ case-1
 reset-pin =0
 sensor-output_pin =1
 
-![Screenshot from 2023-10-30 10-30-38](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7c82585d-e9fd-4745-bfdc-17ebbf23fe28)
+![Screenshot from 2023-11-03 12-30-13](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/189069a6-4087-49c9-8fe9-5f5fa67445eb)
+
 
 case-2
 reset-pin =1
 sensor-output_pin =0
 
-![Screenshot from 2023-10-30 10-29-43](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7efc5c86-8565-49e7-addf-cd4fe38d7bb5)
+![Screenshot from 2023-11-03 12-29-46](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/f46ed169-6fae-4c92-8d3c-a2fc074e5147)
+
 
 
 ## In line assembly C code
@@ -240,13 +242,15 @@ sensor_outpin_pin ==1
 
 [since , I have given loop max value = 5 so my output is upto 4, outherwise it can go up max limit of processor ]
 
-![Screenshot from 2023-10-30 20-56-18](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/129cc4b5-326c-4c7d-a575-d280ca4b80ef)
+![Screenshot from 2023-11-03 12-34-27](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/25b3e402-8e27-42e9-9d5f-bd6a268b4b4a)
+
 
 ### case-2
 reset-pin ==1
 sensor_output_pin ==0
 
-![Screenshot from 2023-10-30 20-56-46](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/a1ff80fc-aef1-4799-9204-36771cde76be)
+![Screenshot from 2023-11-03 12-34-58](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/25b92f96-c941-4b4e-8544-b4ab768ba0fb)
+
 
 
 
