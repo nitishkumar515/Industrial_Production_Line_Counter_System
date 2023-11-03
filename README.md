@@ -58,6 +58,9 @@ sensor-output_pin =0
 
 ## In line assembly C code
 ```
+void display(int number) {
+printf("display count = %d\n",number);
+}
  int main ()
 {
     int reset_pin;            // Declared locally
@@ -87,6 +90,7 @@ sensor-output_pin =0
         }
 
          printf("output = %d\n",output);
+         display(count);
         
     }
     return 0;
