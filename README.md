@@ -1,4 +1,4 @@
-![Screenshot from 2023-11-03 18-27-39](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/15270e87-17e4-4598-a694-0201a7cfec55)# Industrial_Production_Line_Counter_System
+# Industrial_Production_Line_Counter_System
 ## Introduction 
 
 In this project, I aim to Design and build a Production Line Counter System  using smart sensor to fully embrace automation. The method uses Industrial Automation systems and smart sensors to maintain and bring the accuracy over counting. This methodology can be implemented in any Industry. This method is cost efficient and can be easily implemented. I am implementing this all on riscv processor rather than arduino board.
