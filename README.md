@@ -247,8 +247,30 @@ reset-pin ==1   sensor_output_pin ==0
 
 ![Screenshot from 2023-11-03 12-34-58](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/25b92f96-c941-4b4e-8544-b4ab768ba0fb)
 
-## Functional Verification :
+## Functional Simulation In GTKWave :
 ![Screenshot from 2023-11-03 15-26-03](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/a9e5393b-3011-4fd7-b0ef-258a10bd2ede)
+
+## Synthesis :
+
+Synthesis is the process of converting RTL code into a gate-level netlist. It involves mapping the functionality specified in the RTL code to a library of standard cells, such as NAND, NOR, XOR gates, etc., provided by the target technology.
+Synthesis takes place in multiple steps :
+* Converting RTL into simple logic gates.
+* Mapping those gates to actual technology-dependent logic gates available in the technology libraries.
+* Optimizing the mapped netlist keeping the constraints set by the designer intact.
+## Gate Level Simulation :
+Gate level Simulation(GLS) is done at the late level of Design cycle. This is run after the RTL code is synthesized into Netlist. Netlist is translation from RTL into Gates and connection wirings with full functional and timing behaviour. Netlist is logically same as RTL code, therefore, same test bench can be used for it.We perform this to verify logical correctness of the design after synthesizing it. Also ensuring the timing of the design is met. Folllowing are the commands to we need to convert Rtl code to netlist in yosys for that commands are :
+```
+read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80_256.lib 
+read_verilog processor.v 
+synth -top wrapper
+dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80_256.lib 
+abc -liberty sky130_fd_sc_hd__tt_025C_1v80_256.lib
+write_verilog synth_processor_test.v
+
+```
+Folllowing are the commands to run the GLS simulation:
+```
+iverilog -o test synth_processor_test.v testbench.v sky130_sram_1kbyte_1rw1r_32x256_8.v sky130_fd_sc_hd.v primitives.v
 
 
 
