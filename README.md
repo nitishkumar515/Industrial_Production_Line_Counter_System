@@ -247,6 +247,10 @@ reset-pin ==1   sensor_output_pin ==0
 
 ![Screenshot from 2023-11-03 12-34-58](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/25b92f96-c941-4b4e-8544-b4ab768ba0fb)
 
+## Functional Verification :
+![Screenshot from 2023-11-03 15-26-03](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/a9e5393b-3011-4fd7-b0ef-258a10bd2ede)
+
+
 
 
 
