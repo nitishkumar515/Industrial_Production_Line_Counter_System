@@ -1,4 +1,4 @@
-# Industrial_Production_Line_Counter_System
+![Screenshot from 2023-11-03 18-27-39](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/15270e87-17e4-4598-a694-0201a7cfec55)# Industrial_Production_Line_Counter_System
 ## Introduction 
 
 In this project, I aim to Design and build a Production Line Counter System  using smart sensor to fully embrace automation. The method uses Industrial Automation systems and smart sensors to maintain and bring the accuracy over counting. This methodology can be implemented in any Industry. This method is cost efficient and can be easily implemented. I am implementing this all on riscv processor rather than arduino board.
@@ -268,12 +268,15 @@ abc -liberty sky130_fd_sc_hd__tt_025C_1v80_256.lib
 write_verilog synth_processor_test.v
 
 ```
+![Screenshot from 2023-11-03 18-36-10](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/62ac1c60-3c11-491b-a973-cb24e11e114e)
+![Screenshot from 2023-11-03 18-37-09](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7bfa95d8-328e-4f7e-a89f-dbe43ad8dbc5)
+
 Folllowing are the commands to run the GLS simulation:
 ```
 iverilog -o test synth_processor_test.v testbench.v sky130_sram_1kbyte_1rw1r_32x256_8.v sky130_fd_sc_hd.v primitives.v
 ```
+![Screenshot from 2023-11-03 18-27-39](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/d49ec654-540e-4339-9032-2a38257f930b)
 
-The output waveform of the synthesized netlist given below:
 
 
 
