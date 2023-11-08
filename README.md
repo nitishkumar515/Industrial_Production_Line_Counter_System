@@ -58,42 +58,198 @@ reset-pin =1   sensor-output_pin =0
 
 ## In line assembly C code
 ```
-void display(int number) {
-printf("display count = %d\n",number);
-}
+#include<stdio.h>
+void display(int num);
+
  int main ()
 {
-    int reset_pin;            // Declared locally
-    int sensor_output_pin;    // Declared locally
+    int reset_pin = 0;   
+    int sensor_output_pin = 1;    
     int output=0; 
-                      
+   
+
     while(1)
     {
-   
+
         if(reset_pin == 1)
         {
-        int output=0;
-            asm volatile(
-            "and x30, x30, %0"
-            : "=r" (output)    // Assuming you want to store the result in 'output'
-            );
+              int output=0;
+              int temp = 0xFFFFFF00;
+              int dn =   0xFF0101FF;
+              asm volatile(
+              "and x30, x30, %1\n\t"
+              "and x30, x30, %2\n\t"
+              : "=r" (output), "=r" (temp), "=r"(dn)   // Assuming you want to store the result in 'x30 register'
+              );
+        
         }
         else if (sensor_output_pin == 1)
         {
-        output = output +1;
-            asm volatile(
-            "add x30, x30, %0"
-            : "=r" (output)   // Assuming you want to store the result in 'output'
-            );
-            
+            if(output == 5)
+             {
+              output = 0;
+              int temp = 0xFFFFFF00;
+              int dn = 0xFF0101FF;
+              asm volatile(
+              "and x30, x30, %1\n\t"
+              "and x30, x30, %2\n\t"
+              : "=r" (output), "=r" (temp), "=r"(dn)   // Assuming you want to store the result in 'x30 register'
+              );
+              }
+              else
+               {
+                 output = output +1;
+          
+                 asm volatile(
+                 "add x30, x30, %0"
+                 : "=r" (output)   // Assuming you want to store the result in 'x30 register'
+                 ); 
+            }
             
         }
 
-         printf("output = %d\n",output);
-         display(count);
-        
+        display(output);
     }
     return 0;
+}
+
+
+void display(int num)
+{
+ printf("display couny = %d\n",num);  
+ int first_digit, second_digit, send;
+ 
+ 
+ 
+ first_digit = num%10;
+ second_digit = num /10;
+ switch(first_digit)
+{
+case 0:   send = 0xFFFF01FF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 1:  send = 0xFFFF4FFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 2:  send = 0xFFFF12FF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 3:  send = 0xFFFF03FF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 4:  send = 0xFFFF4CFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 5:  send = 0xFFFF24FF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 6:  send = 0xFFFF20FF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 7:  send = 0xFFFF0FFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 8:  send = 0xFFFF00FF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 9:  send = 0xFFFF04FF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+}
+switch(second_digit)
+{
+case 0:  send = 0xFF01FFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 1:  send = 0xFF4FFFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 2:  send = 0xFF12FFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 3:  send = 0xFF03FFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 4:  send = 0xFF4CFFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 5:  send = 0xFF24FFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 6:  send = 0xFF20FFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 7:  send = 0xFF0FFFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 8:  send = 0xFF00FFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;
+case 9:  send = 0xFF04FFFF;
+              asm volatile(
+              "and x30, x30, %0\n\t"
+              : "=r" (send)   // Assuming you want to store the result in 'x30 register'
+              );
+              break;   
+}
+
 }
 
 ```
