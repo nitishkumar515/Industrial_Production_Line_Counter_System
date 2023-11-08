@@ -230,12 +230,13 @@ display(count);
 }
 ```
 
+
+### output
 instruction for spike result
 ```
 riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 -ffreestanding -o out pl_counter.c
 spike pk out
 ```
-## output
 ### case-1
 reset_pin ==0   sensor_outpin_pin ==1
 
