@@ -188,10 +188,7 @@ ret
 
 ## Spike results
 instruction for spike results
-```
-riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 -ffreestanding -o out pl_counter.c
-spike pk out
-```
+
 ```
 #include<stdio.h>
 #include<stdlib.h>
@@ -232,6 +229,10 @@ printf("display count = %d\n",number);
 display(count);
     return 0;
 }
+```
+```
+riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 -ffreestanding -o out pl_counter.c
+spike pk out
 ```
 ## output
 ### case-1
