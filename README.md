@@ -116,7 +116,6 @@ void display(int num);
 
 void display(int num)
 {
- printf("display couny = %d\n",num);  
  int first_digit, second_digit, send;
  
  
