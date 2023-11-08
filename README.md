@@ -63,8 +63,8 @@ void display(int num);
 
  int main ()
 {
-    int reset_pin = 0;   
-    int sensor_output_pin = 1;    
+    int reset_pin ;   
+    int sensor_output_pin;    
     int output=0; 
    
 
