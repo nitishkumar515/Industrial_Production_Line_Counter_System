@@ -229,6 +229,8 @@ display(count);
     return 0;
 }
 ```
+
+instruction for spike result
 ```
 riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 -ffreestanding -o out pl_counter.c
 spike pk out
