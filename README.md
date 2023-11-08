@@ -85,7 +85,7 @@ void display(int num);
         }
         else if (sensor_output_pin == 1)
         {
-            if(output == 5)
+            if(output == 99)
              {
               output = 0;
               int temp = 0xFFFFFF00;
