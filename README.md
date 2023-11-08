@@ -266,6 +266,7 @@ synth -top wrapper
 dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80_256.lib 
 abc -liberty sky130_fd_sc_hd__tt_025C_1v80_256.lib
 write_verilog synth_processor_test.v
+show wrapper
 
 ```
 ![Screenshot from 2023-11-03 18-36-10](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/62ac1c60-3c11-491b-a973-cb24e11e114e)
