@@ -278,6 +278,9 @@ iverilog -o test synth_processor_test.v testbench.v sky130_sram_1kbyte_1rw1r_32x
 ```
 ![Screenshot from 2023-11-03 18-27-39](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/d49ec654-540e-4339-9032-2a38257f930b)
 
+![Screenshot from 2023-11-08 10-57-14](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/bfcfe103-4104-4ef2-81fb-5125da22188f)
+
+
 
 
 
