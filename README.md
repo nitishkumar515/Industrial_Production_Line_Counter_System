@@ -187,7 +187,6 @@ ret
 ```
 
 ## Spike results
-instruction for spike results
 
 ```
 #include<stdio.h>
