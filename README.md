@@ -102,7 +102,7 @@ void display(int num1, int num2);
     
 voiid display(int num1, int num2)
 {  
-printf("display count number = %d%d ",num2,num1);
+printf("display count = %d%d ",num2,num1);
 int send,mask;
  switch(num1)
 {
