@@ -55,8 +55,9 @@ reset-pin =1   sensor-output_pin =0
 ![Screenshot from 2023-11-03 12-29-46](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/f46ed169-6fae-4c92-8d3c-a2fc074e5147)
 
 
+<details>
+<summary> In line assembly C code</summary>
 
-## In line assembly C code
 ```
 #include<stdio.h>
 void display(int num1, int num2);
@@ -257,6 +258,7 @@ case 9:  send = 0xFF04FFFF; mask= 0xFFFF00FF;
 
 
 ```
+</details>
 
 ## Assembly code conversion
 
