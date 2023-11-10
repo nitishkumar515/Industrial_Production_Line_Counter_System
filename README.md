@@ -627,17 +627,19 @@ write_verilog synth_processor_test.v
 show wrapper
 
 ```
-![Screenshot from 2023-11-03 18-36-10](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/62ac1c60-3c11-491b-a973-cb24e11e114e)
-![Screenshot from 2023-11-03 18-37-09](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/7bfa95d8-328e-4f7e-a89f-dbe43ad8dbc5)
+![Screenshot from 2023-11-10 18-27-04](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/44ef7016-e161-44b7-9f06-ea732a9cff43)
+
+![Screenshot from 2023-11-10 18-27-34](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/a5822684-50fd-4e50-bad2-2fb9199d0dd2)
+
 
 Folllowing are the commands to run the GLS simulation:
 ```
 iverilog -o test synth_processor_test.v testbench.v sky130_sram_1kbyte_1rw1r_32x256_8.v sky130_fd_sc_hd.v primitives.v
 ./test
 ```
-![Screenshot from 2023-11-03 18-27-39](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/d49ec654-540e-4339-9032-2a38257f930b)
+![Screenshot from 2023-11-10 20-39-18](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/b14aa904-e910-4763-8467-adc0841d6f8b)
 
-![Screenshot from 2023-11-08 10-57-14](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/bfcfe103-4104-4ef2-81fb-5125da22188f)
+![Screenshot from 2023-11-10 18-29-14](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/099613e2-ee93-4838-b94f-28e25900dd25)
 
 
 
