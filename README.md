@@ -659,10 +659,10 @@ I sciencerly thank **Mr. Kunal Gosh(Founder/VSD)**
 I sciencerly thank **Mr.Mayank Kabra,Founder,Chipcron Pvt.Ltd.**
 
 ## Acknowledgement
-- Kunal Ghosh, VSD Corp. Pvt. Ltd.
+
 - Skywater Foundry
-- Mayank Kabra,imtech
 - Bhargav DV,MS
+- alwin Shaju IIITB
   
 ## Reference 
 
