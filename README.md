@@ -23,10 +23,13 @@ In this project, I aim to Design and build a Production Line Counter System  usi
 8. Detecting pizza dough.
 ## Requirements
 
-Here I am using *Z3R-400* Standard retro-reflective sensor. The small beam of the Z3R-400 sensor allows for detecting or counting product flowing through a a process with narrow spaces. The sensor can detect the interruption to a reflected light beam, and decide if an object is present or not.
+
+Here I am using, Infrared Obstacle Avoidance IR Sensor Module (Active Low) has a pair of infrared transmitting and receiving tubes. When the transmitted light waves are reflected back, the reflected IR waves will be received by the receiver tube. The onboard comparator circuitry does the processing and the green indicator LED comes to life.
+
 ### Sensor
 
-![senso](https://github.com/nitishkumar515/Industrial_Production_Line_Counter_System/assets/140998638/141af6b3-3514-4de2-8863-4a59784917e2)
+![senso](![Screenshot from 2024-10-20 22-08-32](https://github.com/user-attachments/assets/d1454616-e256-4a32-99f3-464a0766de83)
+)
 
 
 
