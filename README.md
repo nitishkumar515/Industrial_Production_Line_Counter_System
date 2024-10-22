@@ -28,8 +28,8 @@ Here I am using, Infrared Obstacle Avoidance IR Sensor Module (Active Low) has a
 
 ### Sensor
 
-![senso](![Screenshot from 2024-10-20 22-08-32](https://github.com/user-attachments/assets/d1454616-e256-4a32-99f3-464a0766de83)
-)
+![Screenshot from 2024-10-20 22-08-32](https://github.com/user-attachments/assets/d1454616-e256-4a32-99f3-464a0766de83)
+
 
 
 
